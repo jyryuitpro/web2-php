@@ -11,7 +11,11 @@
     $list = scandir('./data');
     $i = 0;
     while($i < count($list)){
-        echo "<li><a href=\"index.php?id=$list[$i]\">$list[$i]</a></li>\n";
+        if($list[$i] != '.') {
+            if($list[$i] != '..') {
+                echo "<li><a href=\"index.php?id=$list[$i]\">$list[$i]</a></li>\n";
+            }
+        }
         $i = $i + 1;
     }
     ?>
