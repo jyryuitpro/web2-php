@@ -9,7 +9,11 @@
 <ol>
     <?php
     $list = scandir('./data');
-    var_dump($list);
+    $i = 0;
+    while($i < count($list)){
+        echo "<li><a href=\"index.php?id=$list[$i]\">$list[$i]</a></li>\n";
+        $i = $i + 1;
+    }
     ?>
 </ol>
 <h2>
